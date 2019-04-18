@@ -1,0 +1,222 @@
+*{
+	margin:0;
+	padding: 0;
+	font-family: 'Exo 2', sans-serif;
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+/* About Us */
+.about_us {
+	width: 100%;
+	height: 530px;
+	background: #eeeeee;
+}
+.title_about_us {
+	text-align: center;
+}
+.title_about_us h1 {
+	font-size: 65px;
+	font-weight: 900;
+	color: #262b2e;
+}
+.title_about_us p {
+	font-size: 35px;
+	font-weight: 200;
+}
+
+.info_about_us{
+	width: 100%;
+	height: 530px;
+	display: flex;
+}
+.info_about_us h2 {
+	font-weight: 600;
+	font-size: 45px;
+}
+.info_about_us p {
+	font-size: 15px;
+	font-weight: 500;
+}
+.number,
+.price,
+.quality,
+.charity{
+	width: 396px;
+	height: 110px;
+}
+.number,
+.quality{
+	float: left;
+}
+.price,
+.charity {
+	float: right;
+}
+
+/* Contacts */
+.contacts {
+	width: 100%;
+	height: 527px;
+	background: #eeeeee;
+}
+.contacts hr {
+	width: 50px;
+	border: 0.5px solid black;
+	margin: 0 auto 65px;
+}
+.contacts_title {
+	font-size: 65px;
+	font-weight: 900;
+	text-align: center;
+	color: #262b2e;
+	margin-bottom: 5px;
+	padding-top: 40px
+}
+.contacts_info {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-between;
+	text-align: center;
+}
+.contacts_info h2 {
+	font-size: 50px;
+	font-weight: 400;
+}
+.contacts_info p {
+	font-size: 25px;
+	font-weight: 300;
+}
+.contacts_email img {
+	margin-top: 30px;
+	height: 100px;
+	width: 150px;
+}
+.contacts_telephone img {
+	height: 150px;
+	width: 115px;
+}
+.contacts_location img {
+	margin-top: 10px;
+	height: 130px;
+	width: 135px;
+}
+.contacts_location .img {
+	height: 150px;
+}
+.contacts_email .img {
+	height: 150px;
+}
+.contacts_email,
+.contacts_telephone,
+.contacts_location {
+	padding: 0 74px 0 74px;
+}
+
+
+/* Footer */
+
+footer {
+	background: #0494d9;
+	height: 95px;
+	width: 100%;
+
+}
+
+.first_info img,
+.second_info img,
+.img_app_first,
+.fourth_info img {
+	height: 49px;
+	width: 49px;
+	float: left;
+	margin-right: 15px;
+}
+.footer_info {
+	width: 100%;
+	display: inline-flex;
+	color: white;
+	font-size: 13px;
+	justify-content: space-between;
+}
+.footer_info_text{
+	float: right;
+}
+.footer_info_text_big {
+	font-weight: 600;
+}
+.footer_info_text_small {
+	font-weight: 300;
+	
+}
+.img_app {
+	height: 15px;
+	width: 14px;
+}
+.first_info,
+.second_info,
+.third_info,
+.fourth_info {
+	padding: 21px 45px 21px 45px;
+}
+
+.footer {
+	height: 192px;
+	width: 100%;
+	background: #2f2f2f;
+	display: inline-flex;
+	color: white;
+	justify-content: space-between;
+
+}
+.company {
+	height: 100px;
+	width: 260px;
+	margin-left: 26px;
+	margin-top: 27px;
+}
+.information{
+	height: 100px;
+	width: 260px;
+	margin-top: 27px;
+}
+.company h2,
+.information h2 {
+	font-weight: 700;
+	font-size: 14px;
+}
+.company p {
+	font-weight: 300;
+	font-size: 16px;
+	color: #a4a5a6;
+}
+li {
+	list-style-type : none;
+	font-size: 13px;
+	font-weight: 300;
+	margin-bottom: 29px;
+}
+footer hr {
+	margin-bottom: 24px;
+	margin-top: 6px;
+	opacity: 0.3;	
+}
+.about_us_footer {
+	margin-top: 27px;
+	font-size: 16px;
+	font-weight: 300;
+	height: 1px;
+	width: 650px;
+	color: #a4a5a6;
+	text-align: justify;
+	margin-right: 26px;
+}
+
+
+/* Map */
+
+#map {
+	width: 100%;
+	height: 500px;
+}

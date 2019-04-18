@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{% static 'css/main_page.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Exo+2:200,300,400,500,600,700,800,900" rel="stylesheet">
+	<title></title>
+</head>
+<body>
+	<div class="about_us" id="about_us">
+		<div class="title_about_us">
+			<h1>Про нас</h1>
+			<p>ЧОМУ МИ?</p>
+		</div>
+		<div class="info_about_us">
+			<div class="number">
+				<h2>Кількість</h2>
+				<p>Асортимент сайту постійно оновлюється: наші співробітники уважно стежать за оновленнями, новинками, акційними пропозиціями. </p>
+			</div>
+			<div class="price">
+				<h2>Ціна</h2>
+				<p>Конкурентні ціни, власний сервісний центр, досвідчені консультанти і надійна доставка - зроблять роботу з нами найбільш приємною.</p>
+			</div>
+			<div class="quality">
+				<h2>Якість</h2>
+				<p>Ми впевнені в якості товарів, які Вам пропонуємо, тому на всі позиції надаємо особисту гарантію, не залежно від гарантії виробника: від 14 днів до 12 місяців.</p>
+			</div>
+			<div class="charity">
+				<h2>Благодійність</h2>
+				<p>Інтернет-магазин GALAXY перераховує частину прибутку в благодійні організації, які виступають за розвиток спорту, здорового способу життя та дбайливого ставлення до природи</p>
+			</div>	
+		</div>
+	</div>
+	<div class="contacts" id="contacts">
+		<div class="contacts_title">Контакти</div>
+		<hr>
+		<div class="contacts_info">	
+			<div class="contacts_email">
+				<div class="img"><img src="{% static 'icon/email.png' %}"> </div>
+				<h2>Email:</h2>
+				<p>support@galaxy.shop</p>
+			</div>
+			<div class="contacts_telephone">
+				<img src="{% static 'icon/tel_icon.png' %}"> 
+				<h2>Telephone:</h2>
+				<p>+380 98 328 8530 <br> + 380 67 892 8630</p>
+			</div>
+			<div class="contacts_location">
+				<div class="img"><img src="{% static 'icon/adress.png' %}"></div>
+				<h2>Location:</h2>
+				<p>м. Львів, <br> вул. Наукова 96</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="footer_info">
+			<div class="first_info">
+				<img src="{% static 'icon/sending.png' %}" >
+				<div class="footer_info_text">
+					<p class="footer_info_text_big">ВІДПРАВКА <br> ЗАМОВЛЕНЬ</p>
+					<p class="footer_info_text_small">ПРОТЯГОМ 2-5 ДНІВ</p>
+				</div>
+			</div>
+			<div class="second_info">
+				<img src="{% static 'icon/parcel.png' %}">
+				<div class="footer_info_text">
+					<p class="footer_info_text_big">ПОВЕРНЕННЯ <br> І ОБМІН</p>
+					<p class="footer_info_text_small">14 ДНІВ</p>
+				</div>
+			</div>
+			<div class="third_info">
+				<img src="{% static 'icon/app.png' %}" class="img_app_first">
+				<div class="footer_info_text">
+					<p class="footer_info_text_big">БЕЗКОШТОВНО <br> НА МОБІЛЬНИХ</p>
+					<img src="{% static 'icon/android.png' %}" class="img_app">
+					<img src="{% static 'icon/apple.png' %}" class="img_app">
+				</div>
+			</div>
+			<div class="fourth_info">
+				<img src="{% static 'icon/warantly.png' %}">
+				<div class="footer_info_text">
+					<p class="footer_info_text_big">ГАРАНТІЯ <br> ЯКОСТІ</p>
+					<p class="footer_info_text_small">НА ВСІ ТОВАРИ</p>
+				</div>
+			</div>
+		</div>
+		<div id="map"><iframe width="100%" height="500" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23804.673832914992!2d23.98907874318344!3d49.79590086258315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xca1468834bb1dd06!2sSpecialized+secondary+school+%E2%84%9666!5e0!3m2!1sru!2sua!4v1555535977643!5m2!1sru!2sua" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+		<div class="footer">
+			<div class="company">
+				<h2>КОМПАНІЯ</h2>
+				<hr>
+				<li>
+					<ul><a href="#about_us">Про нас</a></ul>
+					<ul><a href="#contacts">Контакти</a></ul>
+					<ul><a href="shares/">Акції</a></ul>
+				</li>
+
+				<p>Copyright © 2019— GALAXY.shop.ua</p>
+			</div>
+			<div class="information">
+				<h2>ІНФОРМАЦІЯ ПРО ЗАМОВЛЕННЯ</h2>
+				<hr>
+				<li>
+					<ul><a href="delivery/">Умови доставки</a></ul>
+					<ul><a href="exchange/">Повернення / обмін</a></ul>
+					<ul><a href="payment/">Оплата</a></ul>
+				</li>
+			</div>
+			<div class="about_us_footer">
+				<p>Ми пропонуємо широкий асортимент електроніки, побутової техніки і різних споживчих товаров. Наша завдання полягає не тільки в тому, щоб просто продати потрібний товар, але і в тому, щоб інформувати і просвіщати покупця. Для цього ми знімаємо відеоогляди новинок, готуємо статті і новини. Озброївшись всебічною інформацією про цікавий пристрій і його головних конкурентів, ви зможете самостійно прийняти зважене рішення про покупку саме того товару, який вам потрібен.
+				Моб. телефон: +380-123-456-789, Skype: galaxyinfo, Youtube: galaxyshop</p>
+			</div>
+
+		</div>
+	</footer>
+</body>
+</html>
