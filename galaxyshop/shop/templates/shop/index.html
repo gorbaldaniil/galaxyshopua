@@ -8,6 +8,55 @@
 	<title></title>
 </head>
 <body>
+	<header>
+		<div class="header_upper">
+			<div class="header_left">
+				<img src="{% static 'icon/phone-call_white.png' %}">
+				<p class="phone_number">+380-98-328-8530</p>
+				<p class="free">Безкоштовна доставка при замовленні від 699 грн</p>
+			</div>
+			<div class="header_right">
+				<a href="#"><img src="{% static 'icon/moon_white.png' %}"></a>
+				<p><a href="#">ua</a></p>
+				<a href="#"><img src="{% static 'icon/user_white.png' %}"></a>
+			</div>
+		</div>
+		<div class="name">
+			<div class="title_name">
+				<h1>GALAXY</h1>
+				<hr>
+				<h2>НАЙКРАЩІ ТОВАРИ ВІД СВІТОВИХ БРЕНДІВ</h2>
+			</div>
+			<div class="icon_name">
+				<a href="#"><img src="{% static 'icon/cart_white.png' %}"></a>
+				<a href="#"><img src="{% static 'icon/like_white.png' %}"></a>
+				<a href="#"><img src="{% static 'icon/bar-chart_white.png' %}"></a>
+			</div>
+		</div>
+
+	</header>
+
+	<div class="catalog">
+		<div class="title_catalog">
+			<h1>Каталог</h1>
+		</div>
+		<div class="category_catalog">
+			<ul>
+				<li><a href="#">Електроніка</a></li>
+				<li><a href="#">Побутова техніка</a></li>
+				<li><a href="#">Одяг і взуття</a></li>
+				<li class="by"><a href="#">Б/у</a></li>
+			</ul>
+			<a href="#"><img src="{% static 'icon/magnifying-glass.png' %}"></a>
+		</div>
+	</div>
+
+
+	<div id="slider">
+		<img src="{% static 'icon/redmi_slider.jpg' %}">
+		<img src="{% static 'icon/iphone_slider.jpg' %}">
+		<img src="{% static 'icon/samsung_slider.jpg' %}">
+	</div>
 	<div class="about_us" id="about_us">
 		<div class="title_about_us">
 			<h1>Про нас</h1>
@@ -15,21 +64,26 @@
 		</div>
 		<div class="info_about_us">
 			<div class="number">
+				<h3 class="first">1</h3>
 				<h2>Кількість</h2>
 				<p>Асортимент сайту постійно оновлюється: наші співробітники уважно стежать за оновленнями, новинками, акційними пропозиціями. </p>
 			</div>
 			<div class="price">
+				<h3>2</h3>
 				<h2>Ціна</h2>
 				<p>Конкурентні ціни, власний сервісний центр, досвідчені консультанти і надійна доставка - зроблять роботу з нами найбільш приємною.</p>
 			</div>
 			<div class="quality">
+				<h3>3</h3>
 				<h2>Якість</h2>
 				<p>Ми впевнені в якості товарів, які Вам пропонуємо, тому на всі позиції надаємо особисту гарантію, не залежно від гарантії виробника: від 14 днів до 12 місяців.</p>
 			</div>
 			<div class="charity">
+				<h3>4</h3>
 				<h2>Благодійність</h2>
 				<p>Інтернет-магазин GALAXY перераховує частину прибутку в благодійні організації, які виступають за розвиток спорту, здорового способу життя та дбайливого ставлення до природи</p>
 			</div>	
+	
 		</div>
 	</div>
 	<div class="contacts" id="contacts">
@@ -114,5 +168,11 @@
 
 		</div>
 	</footer>
+
+	<script
+  src="https://code.jquery.com/jquery-3.4.0.js"
+  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+  crossorigin="anonymous"></script>	
+	<script type="text/javascript" src="{% static 'JavaScript/script.js' %}"></script>
 </body>
 </html>
