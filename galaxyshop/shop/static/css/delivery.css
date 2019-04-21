@@ -1,0 +1,92 @@
+*{
+	margin:0;
+	padding: 0;
+	font-family: 'Exo 2', sans-serif;
+}
+
+
+header {
+	background: #021d38;
+	height: 105px;
+	width: 100%;
+	display: flex;
+	color: white;
+}
+.menu_icon,
+.icon_menu {
+	margin: 35px;
+}
+header img {
+	height: 32px;
+	width: 32px;
+}
+.menu_icon {
+	width: 10%;
+}
+.name {
+	width: 60%;
+	text-align: center;
+	margin-left: 256px;
+	font-weight: 700;
+	font-size: 50px;
+}
+.icon_menu {
+	width: 30%;
+	float: right;
+	text-align: right;
+}
+.icon_menu img {
+	margin-left: 10px;
+}
+
+.all_ways_delivery {
+	display: flex;
+}
+
+.all_ways_delivery img {
+	height: 100px;
+	width: 100px;
+	margin-top: 10px;
+}
+.novaposhta img {
+	height: 100px;
+	width: 185px;
+} 
+.terms,
+.delivery_methods,
+.ways_of_payment {
+	margin: 0px 25px 0 25px;
+}
+.terms {
+	font-weight: 600;
+	margin-top: 25px;
+	font-size: 45px;
+}
+.all_ways_delivery {
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+}
+.all_ways_delivery h3 {
+	font-weight: 500;
+	font-size: 20px;
+}
+.all_ways_delivery p {
+	font-weight: 400;
+	font-size: 12px;
+	margin-top: 10px;
+	width: 220px;
+
+}
+.delivery_methods h2 {
+	font-size: 28px;
+	font-weight: 500;
+}
+
+/* Способи оплати */
+
+.ways_of_payment h2 {
+	margin-top: 30px;
+	font-size: 28px;
+	font-weight: 500;
+}
