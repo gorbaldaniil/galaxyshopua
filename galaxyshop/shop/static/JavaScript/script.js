@@ -1,3 +1,33 @@
+function menu(selector) {
+	let menu = $(selector);
+	let button = menu.find('.menu-btn');
+	let links = menu.find('.menu-link');
+	let overlay = menu.find('.menu-overlay');
+
+
+	button.on('click', (e) => {
+		e.preventDefault();
+		toggleMenu();
+	});
+
+	links.on('click', () => toggleMenu());
+	overlay.on('click', () => toggleMenu());
+
+	function toggleMenu() {
+		menu.toggleClass('menu-active');
+
+		if (menu.hasClass('menu-active')) {
+			$('body').css('overflow', 'hidden');
+		} else {
+			$('body').css('overflow', 'visible');
+		}
+	}
+}
+menu('.menu');
+
+
+
+
 function slider(selector){
 	let slider = $(selector);
 	let imgs = slider.children();

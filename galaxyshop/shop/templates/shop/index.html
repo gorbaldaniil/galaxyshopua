@@ -5,6 +5,7 @@
 <head>
 	<link rel="stylesheet" href="{% static 'css/main_page.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Exo+2:200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<title></title>
 </head>
 <body>
@@ -57,6 +58,121 @@
 		<img src="{% static 'icon/iphone_slider.jpg' %}">
 		<img src="{% static 'icon/samsung_slider.jpg' %}">
 	</div>
+
+	<div class="hits">
+		<div class="title_hits">
+			<img src="{% static 'icon/title_hits.png' %}">
+		</div>
+		<div class="hits_product_list">
+			{% for product in products %}
+			<div class="product"> 
+				<div class="product-image">
+					<img src="{{ product.image.url }}">
+				</div>
+				<h2>{{ product.title }}</h2>
+				<div class="hits_product_stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+				</div>
+				<p class="price_title">{{ product.price }}грн.</p>
+				<div class="icons_product">
+					<div class="cart">
+						<img src="{% static 'icon/cart_green.png' %}">
+						<p>В КОРЗИНУ</p>
+					</div>
+					<div class="right_icons_product">
+						<img src="{% static 'icon/bar-chart.png' %}">
+						<img src="{% static 'icon/like.png' %}">
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+
+		</div>
+	</div>
+
+	<div class="recomendation">
+		<div class="title_recomendation">
+			<h1>РЕКОМЕНДАЦІЇ</h1>
+		</div>
+		<div class="hits_product_list">
+			<div class="product"> 
+				<img src="{% static 'icon/product_icon.png' %}">
+				<h2>Apple iPhone 8 (PRODUCT)RED™ Special Edition 64GB</h2>
+				<div class="hits_product_stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+				</div>
+				<p class="price_title"><b>17 777 грн.</b> <s>19 999 грн.</s></p>
+				<div class="icons_product">
+					<div class="cart">
+						<img src="{% static 'icon/cart_green.png' %}">
+						<p>В КОРЗИНУ</p>
+					</div>
+					<div class="right_icons_product">
+						<img src="{% static 'icon/bar-chart.png' %}">
+						<img src="{% static 'icon/like.png' %}">
+					</div>
+				</div>
+			</div>
+			<div class="product"> 
+				<img src="{% static 'icon/product_icon.png' %}">
+				<h2>Apple iPhone 8 (PRODUCT)RED™ Special Edition 64GB</h2>
+				<div class="hits_product_stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+				</div>
+				<p class="price_title"><b>17 777 грн.</b> <s>19 999 грн.</s></p>
+				<div class="icons_product">
+					<div class="cart">
+						<img src="{% static 'icon/cart_green.png' %}">
+						<p>В КОРЗИНУ</p>
+					</div>
+					<div class="right_icons_product">
+						<img src="{% static 'icon/bar-chart.png' %}">
+						<img src="{% static 'icon/like.png' %}">
+					</div>
+				</div>
+			</div>
+			<div class="product"> 
+				<img src="{% static 'icon/product_icon.png' %}">
+				<h2>Apple iPhone 8 (PRODUCT)RED™ Special Edition 64GB</h2>
+				<div class="hits_product_stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+				</div>
+				<p class="price_title"><b>17 777 грн.</b> <s>19 999 грн.</s></p>
+				<div class="icons_product">
+					<div class="cart">
+						<img src="{% static 'icon/cart_green.png' %}">
+						<p>В КОРЗИНУ</p>
+					</div>
+					<div class="right_icons_product">
+						<img src="{% static 'icon/bar-chart.png' %}">
+						<img src="{% static 'icon/like.png' %}">
+					</div>
+				</div>
+			</div>
+			<div class="product"> 
+				<img src="{% static 'icon/product_icon.png' %}">
+				<h2>Apple iPhone 8 (PRODUCT)RED™ Special Edition 64GB</h2>
+				<div class="hits_product_stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+				</div>
+				<p class="price_title"><b>17 777 грн.</b> <s>19 999 грн.</s></p>
+				<div class="icons_product">
+					<div class="cart">
+						<img src="{% static 'icon/cart_green.png' %}">
+						<p>В КОРЗИНУ</p>
+					</div>
+					<div class="right_icons_product">
+						<img src="{% static 'icon/bar-chart.png' %}">
+						<img src="{% static 'icon/like.png' %}">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 	<div class="about_us" id="about_us">
 		<div class="title_about_us">
 			<h1>Про нас</h1>
@@ -82,10 +198,80 @@
 				<h3>4</h3>
 				<h2>Благодійність</h2>
 				<p>Інтернет-магазин GALAXY перераховує частину прибутку в благодійні організації, які виступають за розвиток спорту, здорового способу життя та дбайливого ставлення до природи</p>
-			</div>	
-	
+			</div>
 		</div>
 	</div>
+
+	<div class="reviews">
+		<div class="title_reviews">
+			<h1>ВІДГУКИ</h1>
+			<hr>
+		</div>
+		<div class="user_reviews">
+			<div class="user_response">
+				<img src="{% static 'icon/photo_user.jpg' %}">
+				<h3>АНДРІЙ</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+				</div>	
+				<p>Дуже красивий та зручний сайт. 
+						Рекомендую його!</p>
+			</div>
+
+			<div class="user_response">
+				<img src="{% static 'icon/photo_user.jpg' %}">
+				<h3>АНДРІЙ</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+				</div>	
+				<p>Дуже красивий та зручний сайт. 
+						Рекомендую його!</p>
+			</div>
+
+			<div class="user_response">
+				<img src="{% static 'icon/photo_user.jpg' %}">
+				<h3>АНДРІЙ</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+				</div>	
+				<p>Дуже красивий та зручний сайт. 
+						Рекомендую його!</p>
+			</div>
+
+			<div class="user_response">
+				<img src="{% static 'icon/photo_user.jpg' %}">
+				<h3>АНДРІЙ</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+				</div>	
+				<p>Дуже красивий та зручний сайт. 
+						Рекомендую його!</p>
+			</div>
+
+		</div>
+		<div class="rate_us">
+			<div class="rate_us_textarea">
+				<h2>Оцініть нас!</h2>
+				<textarea placeholder="Текст..." rows="6" cols="60"></textarea>
+			</div>
+			<div class="info_about_user">
+				<h3>ІМ'Я</h3>
+				<input type="text" placeholder="Username">
+				<h3>ПОЧТА</h3>
+   				<input type="email" placeholder="Email">
+   				<div class="rate_stars">
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+					<i class="far fa-star"></i>
+				</div>
+				 <input type="submit" value="Відправити">
+			</div>
+		</div>
+	</div>
+
+	
 	<div class="contacts" id="contacts">
 		<div class="contacts_title">Контакти</div>
 		<hr>

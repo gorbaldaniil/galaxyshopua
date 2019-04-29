@@ -1,9 +1,23 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Category
+
+def base(request):
+	products = Product.objects.all()
+	categories = Category.objects.all()
+	context = {
+		'categories': categories,
+		'products': products
+	}
+	return render(request, 'shop/base.html', context)
 
 def main_page(request):
 	products = Product.objects.all()
-	return render(request, 'shop/index.html', {'products': products})
+	categories = Category.objects.all()
+	context = {
+		'categories': categories,
+		'products': products
+	}
+	return render(request, 'shop/index.html', context)
 
 def product_detail(request, pk):
 	product = get_object_or_404(Product, pk=pk)

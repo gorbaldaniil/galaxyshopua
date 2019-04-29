@@ -151,11 +151,104 @@ header {
 
 /* End of catalog */
 
+/* Hits */
+.hits {
+	height: 794px;
+	width: 100%;
+	display: block;
+	background: #eeeeee;
+}
+.title_hits {
+	padding-top: 90px;
+	padding-bottom: 90px;	
+	width: 100%;
+}
+.title_hits img {
+	display: flex;
+	margin: 0 auto;
+}
+
+.hits_product_list {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;	
+}
+.product-image {
+	width: 270px;
+}
+.product-image img {
+	display: flex;
+	margin: 0 auto;
+}
+.product {
+	display: block;
+	width: 270px;
+	margin: 25px;
+}
+.product h2 {
+	font-weight: 300;
+	font-size: 18px;
+}
+.product .fas {
+	color: #ed8a19;
+}
+.product p {
+	font-size: 18px;
+}
+.product b {
+	color: #ff2020;
+	font-weight: 500;
+}
+.icons_product,
+.cart {
+	display: flex;
+}
+.icons_product img {
+	height: 20px;
+	width: 20px;
+}
+.cart p {
+	font-weight: 500;
+	font-size: 14px;
+	color: #00b853;
+}
+.right_icons_product {
+	display: inline;	
+	margin-left: auto;
+}
+.price_title,
+.cart,
+.right_icons_product {
+	padding-top: 4px;
+}
+
+/* End of hits */
+
+/* Recomendation */
+
+.recomendation {
+	height: 794px;
+	width: 100%;
+	display: block;
+}
+.title_recomendation {
+	width: 100%;
+	padding-top: 90px;
+	padding-bottom: 90px;	
+}
+.title_recomendation h1 {
+	text-align: center;
+	font-weight: 900;
+	font-size: 65px;
+}
+/* End of recomendation */
+
 /* About Us */
 .about_us {
 	width: 100%;
 	height: 530px;
 	background: #eeeeee;
+	padding-bottom: 60px;
 }
 .title_about_us {
 	text-align: center;
@@ -203,6 +296,139 @@ header {
 	margin-left: 10px;
 }
 	
+/* End of About Us */
+
+/* Rewiews */
+
+.reviews {
+	display: block;
+	width: 100%;
+	height: 1030px;
+
+}
+.title_reviews {
+	text-align: center;
+}
+
+.title_reviews hr {
+   	border: 0.8px solid black;
+    width: 53px;
+	margin: 0 auto;	
+    
+}
+.title_reviews h1 {
+	font-weight: 900;
+	font-size: 60px;
+	margin-bottom: 20px;
+	margin-top: 96px;
+	color: #262b2e;
+}
+
+.user_reviews {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.user_response {
+	display: block;
+	width: 22%;
+	margin: 40px;
+	text-align: center;
+}
+.user_response img {
+	height: 230px;
+	width: 230px;
+	border-radius: 50%;
+}
+.user_response h3 {
+	font-weight: 300;
+	font-size: 25px;
+}
+.user_response p {
+	font-weight: 300;
+	font-size: 17px;
+}
+.stars .fa-star {
+	color: #ed8a19;
+}
+.info_about_user .fa-star {
+	font-size: 20px;
+	margin-top: 5px
+}
+.rate_us {
+	width: 100%;
+	display: flex;
+	margin-top: 70px;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.info_about_user {
+	width: 25%;
+	margin-top: 45px;
+}
+.rate_us_textarea, 
+.info_about_user {
+	text-align: center;
+}
+
+.rate_us_textarea h2 {
+	color: #262b2e;
+	font-size: 45px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+.info_about_user h3 {
+	font-weight: 300;
+	font-size: 40px;
+}
+
+.rate_us_textarea textarea {
+  display: block;
+  width: 90%;
+  padding: 15px 30px;
+  margin-bottom: 10px;
+  background: #eeeeee;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 50px;
+  
+}
+
+.info_about_user input {
+  display: block;
+  width: 90%;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  background: #eeeeee;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 50px;
+
+}
+.info_about_user input[type="submit"] {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  background: #eeeeee;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+.info_about_user input[type="submit"] {
+  margin-top: 10px;
+  background: #0494d9;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+.rate_us_textarea textarea {resize: none;}
+
+
+/* End of rewiews */
 
 /* Contacts */
 .contacts {
@@ -363,12 +589,18 @@ footer hr {
 }
 
 
+
+
+
+
+
 /* Map */
 
 #map {
 	width: 100%;
 	height: 500px;
 }
+/* End of map*/
 
 /* Slider */
 .slider {
@@ -451,3 +683,4 @@ footer hr {
 	border-color: transparent;
 	background-color: var(--color-2)
 }
+/* End of slider*/

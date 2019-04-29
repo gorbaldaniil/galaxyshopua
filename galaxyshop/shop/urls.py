@@ -1,7 +1,9 @@
 from django.urls import path,include
 from . import views
 from django.conf.urls import url
+
 urlpatterns = [
+    url(r'base/', views.base, name='base'),
     path('', views.main_page, name='main_page'),
     url(r'^product/(?P<pk>[0-9]+)/$', views.product_detail, name='product_detail'),
     url(r'payment/', views.payment, name="payment"),
