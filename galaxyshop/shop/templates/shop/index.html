@@ -9,6 +9,41 @@
 	<title></title>
 </head>
 <body>
+	
+	<button id="scrollToTopButton" onclick="scrollToTop(300,3);"><i class="fa fa-arrow-up"></i></button>
+	<div onclick="show('none')" id="gray"></div>
+	<div id="window">
+    <!-- Картинка крестика -->
+    <img class="close" src="i/close.png" alt=""  onclick="show('none')">
+    	<div class="form">
+        	<div class="exit">
+            	<h2>Вхід</h2>
+            	<p>Вже наш клієнт?</p>
+            	<hr>
+            	<div>
+                	<form method="post">
+                	{% csrf_token %}
+                	{{ form.as_p }}
+                	<button type="submit">Login</button>
+                	</form>
+            	</div>
+        	</div>
+        <div class="registration">
+            <h2>Новий аккаунт</h2>
+            <p>Ще не зареєстровані?</p>
+            <div>
+                <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+
+    	</div>
+	</div>
+
+
 	<header>
 		<div class="header_upper">
 			<div class="header_left">
@@ -19,7 +54,7 @@
 			<div class="header_right">
 				<a href="#"><img src="{% static 'icon/moon_white.png' %}"></a>
 				<p><a href="#">ua</a></p>
-				<a href="#"><img src="{% static 'icon/user_white.png' %}"></a>
+				<img onclick="show('block')" src="{% static 'icon/user_white.png' %}">
 			</div>
 		</div>
 		<div class="name">
@@ -29,7 +64,7 @@
 				<h2>НАЙКРАЩІ ТОВАРИ ВІД СВІТОВИХ БРЕНДІВ</h2>
 			</div>
 			<div class="icon_name">
-				<a href="#"><img src="{% static 'icon/cart_white.png' %}"></a>
+				<a href="/cart/"><img src="{% static 'icon/cart_white.png' %}"></a>
 				<a href="#"><img src="{% static 'icon/like_white.png' %}"></a>
 				<a href="#"><img src="{% static 'icon/bar-chart_white.png' %}"></a>
 			</div>
@@ -48,10 +83,9 @@
 				<li><a href="#">Одяг і взуття</a></li>
 				<li class="by"><a href="#">Б/у</a></li>
 			</ul>
-			<a href="#"><img src="{% static 'icon/magnifying-glass.png' %}"></a>
+			<a href="#" ><img src="{% static 'icon/magnifying-glass.png' %}"></a>
 		</div>
 	</div>
-
 
 	<div id="slider">
 		<img src="{% static 'icon/redmi_slider.jpg' %}">
@@ -67,17 +101,17 @@
 			{% for product in products %}
 			<div class="product"> 
 				<div class="product-image">
-					<img src="{{ product.image.url }}">
+					<a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}"></a>
 				</div>
-				<h2>{{ product.title }}</h2>
+				<a href="{{ product.get_absolute_url }}"><h2>{{ product.title }}</h2></a>
 				<div class="hits_product_stars">
 					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
 				</div>
 				<p class="price_title">{{ product.price }}грн.</p>
 				<div class="icons_product">
 					<div class="cart">
-						<img src="{% static 'icon/cart_green.png' %}">
-						<p>В КОРЗИНУ</p>
+						<a href="#"><img src="{% static 'icon/cart_green.png' %}"></a>
+						<a href="#"><p>В КОРЗИНУ</p></a>
 					</div>
 					<div class="right_icons_product">
 						<img src="{% static 'icon/bar-chart.png' %}">
@@ -354,6 +388,8 @@
 
 		</div>
 	</footer>
+
+	
 
 	<script
   src="https://code.jquery.com/jquery-3.4.0.js"

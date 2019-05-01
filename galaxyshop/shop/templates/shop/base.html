@@ -5,6 +5,8 @@
 <head>
 	<link rel="stylesheet" href="{% static 'css/base.css' %}">
 	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+	<link rel="stylesheet" href="{% static 'css/cart.css' %}">
 	<link href="https://fonts.googleapis.com/css?family=Exo+2:200,300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<title></title>
@@ -32,18 +34,6 @@
 
 			<div class="menu-overlay"></div>
 
-		{% block content %}
-	
-   		{% endblock %}
-
-
-
-
-
-
-
-
-
 		</div>
 		<div class="name">
 			<h1>GALAXY</h1>
@@ -55,13 +45,17 @@
 				<a href="#" class="search-btn"><i class="fas fa-search"></i></a>
 			</div>
 			<div class="cart_and_user">
-				<a href="#"><i class="fas fa-shopping-cart"></i></a>
-				<a href="#"><img src="{% static 'icon/user_back.png' %}" class="user flexible-image"></a>
+				<a href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i><span id="cart_count">{{ cart.items.count }}</span></a>
+
+				<a href=""><img src="{% static 'icon/user_back.png' %}" class="user flexible-image"></a>
 			</div>
 		</div>
 	</header>
 
 
+	{% block content %}
+	
+   	{% endblock %}
 
 	
 		<div class="footer">
@@ -90,14 +84,29 @@
 				<p>Ми пропонуємо широкий асортимент електроніки, побутової техніки і різних споживчих товаров. Наша завдання полягає не тільки в тому, щоб просто продати потрібний товар, але і в тому, щоб інформувати і просвіщати покупця. Для цього ми знімаємо відеоогляди новинок, готуємо статті і новини. Озброївшись всебічною інформацією про цікавий пристрій і його головних конкурентів, ви зможете самостійно прийняти зважене рішення про покупку саме того товару, який вам потрібен.
 				Моб. телефон: +380-123-456-789, Skype: galaxyinfo, Youtube: galaxyshop</p>
 			</div>
-
 		</div>
 
 	
-	<script
-  src="https://code.jquery.com/jquery-3.4.0.js"
-  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
-  crossorigin="anonymous"></script>	
-	<script type="text/javascript" src="{% static 'JavaScript/script.js' %}"></script>
+<script src="{% static 'JavaScript/jquery.js'%}"></script>
+<script type="text/javascript" src="{% static 'JavaScript/script.js' %}"></script>
+<script>
+$(document).ready(function(){
+	$('.add_to_cart').on('click', function(e){
+		e.preventDefault()
+		product_slug = $(this).attr('data-slug')
+		data = {
+			product_slug: product_slug
+		}
+		$.ajax({
+			type: "GET",
+			url: '{% url "add_to_cart" %}',
+			data: data,
+			success: function(data){
+				$("#cart_count").html(data.cart_total)
+			}
+		})
+	})
+})
+</script>
 </body>
 </html>

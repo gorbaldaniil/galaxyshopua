@@ -1,0 +1,47 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="cart_list">
+	<div>
+		<h1>Кошик</h1>
+	</div>
+	<hr>
+	<div class="cart_list_title">
+		<h2>Назва товару</h2>
+		<h2>Кількість</h2>
+		<h2>Ціна</h2>
+	</div>
+	{% for item in cart.items.all %}
+	<div class="cart_products cart-item-{{ item.product.id }}">
+		<h2>{{ item.product.title }}</h2>
+		<h2>{{ item.qty }}</h2>
+		<h2>{{ item.item_total }}</h2>
+		<a href="#" class="remove_from_cart" data-slug='{{ item.product.slug }}' data-id= '{{ item.product.id }}'><button>Видалити з кошика</button></a>
+	</div>
+	{% endfor %}
+</div>
+<script src="{% static 'JavaScript/jquery.js'%}"></script>
+<script>
+$(document).ready(function(){
+	$('.remove_from_cart').on('click', function(e){
+		e.preventDefault()
+		product_slug = $(this).attr('data-slug')
+		item_product_id = $(this).attr('data-id')
+		data = {
+			product_slug: product_slug
+		}
+		$.ajax({
+			type: "GET",
+			url: '{% url "remove_from_cart" %}',
+			data: data,
+			success: function(data){
+				$("#cart_count").html(data.cart_total)
+				$('.cart-item-'+item_product_id).css('display', 'none')
+			}
+		})
+	})
+})
+</script>
+
+{% endblock %}

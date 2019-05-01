@@ -1,4 +1,304 @@
-* {
-	margin: 0;
-	padding: 0;
+
+.product_main_page {
+	width: 100%;
+	height: 750px;
+}
+
+.collapse a {
+	text-decoration: none;
+	color: black;
+}
+/* Collapse */
+.collapse {
+	padding: 45px;
+}
+.collapse ul {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	font-size: 20px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+.collapse hr {
+	margin-top: 5px;
+	border: 0.5px solid #ccc;
+}
+.collapse_active {
+	color: #0494d9;
+}
+
+/* Product photo */
+
+.product_photos {
+	width: 481px;
+	display: block;
+	margin-left: 45px;
+}
+
+.product_main_photo{
+	height: 481px;
+	width: 100%;
+}
+.product_main_photo img {
+	display: flex;
+	margin: 0 auto;
+	width: 351px;
+	height: 481px;
+}
+
+.product_photos_slider {
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+.product_photos_slider img {
+	height: 75px;
+	width: 75px;
+
+}
+
+/* Product information */
+
+.product_photo_and_information {
+	display: flex;
+	width: 100%;
+}
+.product_information {
+	display: block;
+	width: 100%;
+	margin-right: 40px;
+	margin-left: 25px;
+}
+.product_title {
+	width: 100%;
+}
+.product_title h1 {
+	font-size: 40px;
+	font-weight: 400;
+}
+.product_main_information {
+	display: flex;
+}
+.stars_and_favorite,
+.product_price,
+.buttons,
+.cart_and_installment,
+.description,
+.product_color,
+.internal_memory {
+	width: 300px;
+}
+.stars_and_favorite {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+.product_stars .fa-star {
+	color: #ed8a19;
+	font-size: 25px;
+}
+
+.favorite {
+	display: flex;	
+}
+.favorite a {
+	color: black;
+	margin-top: auto;
+}
+.favorite p {
+	font-weight: 300;
+	font-size: 15px;
+	margin-left: 5px;
+}
+.favorite i {
+	font-size: 20px;
+}
+.price_title {
+	font-weight: 500;
+	font-size: 30px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.buttons {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+.buttons button {
+	width: 130px;
+	height: 60px;
+	border-radius: 10px;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
+.button-buy button {
+	background-color: #0494d9;
+	color: white;
+	font-size: 32px;
+	font-weight: 600;
+}
+.installment button {
+	background-color: #eeeeee;
+	color: black;
+	font-size: 20px;
+	font-weight: 600;
+}
+.cart_and_installment {
+	display: flex;
+	justify-content: space-between;
+}
+.cart {
+	display: flex;
+	margin-left: 12px;
+	margin-top: 5px;
+}
+.cart a {
+	color: #00b853;
+}
+
+.installment_in_month {
+	margin-right: 13px;
+	margin-top: 5px;
+}
+.description {
+	margin-top: 30px;
+}
+.description p {
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.5;
+}
+.product_color {
+	margin-top: 30px;
+}
+.product_color_title {
+	font-weight: 300;
+	font-size: 16px;
+}
+.product_main_information_right {
+	width: 100%;
+	margin-left: 45px;
+	margin-top: 35px;
+}
+
+/* Delivery */
+
+.delivery_comparison_payment {
+	width: 100%;
+	height: 300px;
+	display: block;
+}
+.delivery_and_payment {
+	display: flex;
+	padding-top: 25px;
+	padding-left: 30px;
+	justify-content: space-between;
+}
+.delivery {
+	display: block;
+	width: 45%;
+}
+.payment_and_exchange {
+	display: block;
+	width: 35%;
+	padding-right: 30px;
+	padding-top: 10px;
+}
+.delivery_title h2 {
+	font-weight: 500;
+	font-size: 25px;
+}
+
+.delivery_comparison_payment,
+.enter_your_email {
+	background: #eeeeee;
+}
+
+.delivery_list img {
+	height: 30px;
+	width: 30px;
+}
+.nova_poshta,
+.ukrposhta,
+.address {
+	margin-top: 15px;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+.delivery_list {
+	display: block;
+	width: 100%;
+}
+.ukrposhta_img,
+.nova_poshta_img,
+.address_img {
+	width: 35%;
+	display: flex;
+	justify-content: center;
+}
+.nova_poshta p,
+.ukrposhta p,
+.address  p{
+	width: 65%;
+	margin-top: 3px;
+	display: flex;
+	font-weight: 300;
+	font-size: 16px;
+}
+
+.payment h3,
+.exchange h3{
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.payment p,
+.exchange p {
+	font-weight: 300;
+	font-size: 14px;
+}
+.exchange {
+	margin-top: 15px;
+}
+
+.comparison{
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+}
+.comparison i {
+	font-size: 40px;
+}
+
+
+.enter_your_email {
+	margin-top: 30px;
+	padding: 30px;
+	display: block;
+	font-size: 18px;
+}
+.enter_your_email h2 {
+	font-size: 18px;
+	font-weight: 500;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.enter_your_email input {
+  display: block;
+  width: 50%;
+  padding: 5px 20px;
+  margin: 0 auto;
+  background: transparent;
+  border: 2px solid #0494d9;
+  line-height: 30px;
+  border-radius: 50px;
 }

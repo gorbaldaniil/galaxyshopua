@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'shop',
 ]
 
+AUTH_USER_MODEL = 'shop.CustomUser'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'galaxyshop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,3 +129,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static_in_dev'),
 )
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
