@@ -1,20 +1,36 @@
 from django.contrib import admin
 from django.contrib.auth import get_user_model
-from django.contrib.auth.admin import UserAdmin
-from .models import Category, Product, Brand, CustomUser, CartItem, Cart
+from .models import Category, Product, Brand, CartItem, Cart, SubCategory, Hit, Order,Product_images,ProductDescription,Description_info,Recomendations
 
-from .forms import CustomUserCreationForm, CustomUserChangeForm
 
-admin.site.register(Product)
+
+
+class ProductDescriptionInline(admin.TabularInline):
+    """Defines format of inline book insertion (used in AuthorAdmin)"""
+    model = ProductDescription
+
+@admin.register(Product)
+class Product(admin.ModelAdmin):
+    
+    inlines = [ProductDescriptionInline]
+
+class Description_infoInline(admin.TabularInline):
+    """Defines format of inline book insertion (used in AuthorAdmin)"""
+    model = Description_info
+
+@admin.register(ProductDescription)
+class ProductDescription(admin.ModelAdmin):
+    
+    inlines = [Description_infoInline]
+
 admin.site.register(Category)
 admin.site.register(Brand)
 admin.site.register(Cart)
 admin.site.register(CartItem)
- 
+admin.site.register(SubCategory)
+admin.site.register(Hit)
+admin.site.register(Recomendations)
+admin.site.register(Order) 
+admin.site.register(Product_images)
+admin.site.register(Description_info)
 
-class CustomUserAdmin(UserAdmin):
-    model = CustomUser
-    add_form = CustomUserCreationForm
-    form = CustomUserChangeForm
-
-admin.site.register(CustomUser, CustomUserAdmin)

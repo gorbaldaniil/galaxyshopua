@@ -1,0 +1,78 @@
+*{
+	margin:0;
+	padding: 0;
+	font-family: 'Exo 2', sans-serif;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+ul {
+	list-style-type: none;
+}
+input {
+	display: flex;
+  	padding: 5px 20px;
+  	background: #eeeeee;
+  	line-height: 20px;
+  	border-width: 0;
+  	border-radius: 50px;
+
+}
+i {
+	margin: 20px;
+	font-size: 25px;
+}
+.login-info p,
+.singup-title p,
+.home-title p{
+	font-size: 20px;
+}
+.login-title,
+.singup-title,
+.home-title {
+	text-align: center;
+	margin-top: 25px;
+	margin-bottom: 50px;
+	font-size: 35px;
+}
+.buttons {
+	display: flex;
+}
+.login-info,
+.singup-info {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+
+}
+.home-info{
+	display: block;
+	text-align: center;
+}
+.singup-info input{
+	margin-left: auto;
+	margin-right: auto;
+}
+button[type="submit"] {
+  margin-top: 10px;
+  background: #0494d9;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+}
+.singup {
+	margin: 20px;
+}
+.logout {
+	position: absolute;
+	top: 20;
+	right: 20;
+}

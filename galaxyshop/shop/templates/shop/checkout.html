@@ -1,0 +1,32 @@
+{% extends 'shop/base.html '%}
+
+{% block content %}
+
+<div class="cart_list">
+	<div>
+		<h1>Оформлення замовлення</h1>
+	</div>
+	<hr>
+	<div class="cart_list_title">
+		<h2 class="name">Назва</h2>
+		<h2 class="number">Кі-сть</h2>
+		<h2 class="price">Ціна</h2>
+	</div>
+	{% for item in cart.items.all %}
+	<div class="cart_products ">
+		<div class="cart_product_info">
+			<img src="{{ item.product.image.url }}">
+			<h2 class="name">{{ item.product.title }}</h2>
+			<h2>{{ item.qty }}</h2>
+			<h2 class="price">{{ item.item_total }} грн.</h2>
+		</div>
+	</div>
+	{% endfor %}
+	<div class="total_price">
+		<h2>Разом:  <br></h2>
+		<h2>{{ cart.cart_total }} грн.</h2>
+	</div>
+	<a href="#" class="next-div"><button class="next">Оформити заказ</button></a>
+</div>
+
+{% endblock content %}

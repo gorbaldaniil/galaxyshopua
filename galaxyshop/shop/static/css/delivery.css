@@ -1,43 +1,3 @@
-*{
-	margin:0;
-	padding: 0;
-	font-family: 'Exo 2', sans-serif;
-}
-
-
-header {
-	background: #021d38;
-	height: 105px;
-	width: 100%;
-	display: flex;
-	color: white;
-}
-.menu_icon,
-.icon_menu {
-	margin: 35px;
-}
-header img {
-	height: 32px;
-	width: 32px;
-}
-.menu_icon {
-	width: 10%;
-}
-.name {
-	width: 60%;
-	text-align: center;
-	margin-left: 256px;
-	font-weight: 700;
-	font-size: 50px;
-}
-.icon_menu {
-	width: 30%;
-	float: right;
-	text-align: right;
-}
-.icon_menu img {
-	margin-left: 10px;
-}
 
 .all_ways_delivery {
 	display: flex;
@@ -81,6 +41,9 @@ header img {
 .delivery_methods h2 {
 	font-size: 28px;
 	font-weight: 500;
+}
+.delivery_methods{ 
+	margin-bottom: 70px;
 }
 
 /* Способи оплати */

@@ -2,7 +2,6 @@
 	margin:0;
 	padding: 0;
 	font-family: 'Exo 2', sans-serif;
-
 }
 
 a {
@@ -11,6 +10,17 @@ a {
 }
 
 
+.badge {
+  padding: 1px 11px 2px;
+  font-size: 12.025px;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: #0494d9;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
 /* Header*/
 
 header {

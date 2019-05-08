@@ -1,6 +1,18 @@
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<div class="header">
+	<a href="/"><i class="fas fa-arrow-circle-left"></i></a>
+	<p class="singup"><a href="{% url 'signup' %}">Зареєструватися</a></p>
+</div>
+
+
+<h2 class="login-title">Вхід в інтернет-магазин</h2>
+<div class="login-info">
+	<form method="post">
+	  {% csrf_token %}
+	  {{ form.as_p }}
+	  <button type="submit">Увійти</button>	 
+	</form>
+</div>

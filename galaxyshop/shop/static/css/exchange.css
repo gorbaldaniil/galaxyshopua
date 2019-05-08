@@ -1,0 +1,14 @@
+.exchange-page {
+	padding-right: 45px;
+	padding-left: 45px;
+	display: block;
+}
+.title-exchange {
+	text-align: center;
+	margin-top: 65px;
+	margin-bottom: 55px;
+}
+.text-exchange {
+	font-weight: 800;
+	font-size: 30px;
+}

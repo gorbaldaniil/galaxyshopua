@@ -22,7 +22,7 @@
 }
 .collapse hr {
 	margin-top: 5px;
-	border: 0.5px solid #ccc;
+	border: 1px solid #ccc;
 }
 .collapse_active {
 	color: #0494d9;
@@ -34,6 +34,7 @@
 	width: 481px;
 	display: block;
 	margin-left: 45px;
+	margin-right: 45px;
 }
 
 .product_main_photo{
@@ -43,8 +44,8 @@
 .product_main_photo img {
 	display: flex;
 	margin: 0 auto;
-	width: 351px;
-	height: 481px;
+	width: 420px;
+	height: 504px;
 }
 
 .product_photos_slider {
@@ -55,8 +56,8 @@
 	margin-top: 15px;
 }
 .product_photos_slider img {
-	height: 75px;
-	width: 75px;
+	height: 108px;
+	width: 90px;
 
 }
 
@@ -168,11 +169,13 @@
 }
 .description {
 	margin-top: 30px;
+	display: flex;
 }
-.description p {
-	font-weight: 300;
-	font-size: 16px;
+.description pre {
 	line-height: 1.5;
+}
+.description_info {
+	margin-left: 10px;
 }
 .product_color {
 	margin-top: 30px;
@@ -212,7 +215,7 @@
 }
 .delivery_title h2 {
 	font-weight: 500;
-	font-size: 25px;
+	font-size: 22px;
 }
 
 .delivery_comparison_payment,
@@ -256,13 +259,13 @@
 .payment h3,
 .exchange h3{
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 16px;
 }
 
 .payment p,
 .exchange p {
 	font-weight: 300;
-	font-size: 14px;
+	font-size: 13px;
 }
 .exchange {
 	margin-top: 15px;

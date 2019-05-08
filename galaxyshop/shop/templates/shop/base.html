@@ -5,8 +5,13 @@
 <head>
 	<link rel="stylesheet" href="{% static 'css/base.css' %}">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/product_detail.css' %}"> -->
+	<link rel="stylesheet" href="{% static 'css/product_description.css' %}">
+	<link rel="stylesheet" href="{% static 'css/product_video.css' %}">
+	<link rel="stylesheet" href="{% static 'css/product_photos.css' %}">
 	<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+	<link rel="stylesheet" href="{% static 'css/exchange.css' %}">
+	<link rel="stylesheet" href="{% static 'css/product_reviews.css' %}"> 
 	<link href="https://fonts.googleapis.com/css?family=Exo+2:200,300,400,500,600,700,800,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<title></title>
@@ -20,14 +25,13 @@
 			</a> 
 			<nav class="menu-nav">
 				<a href="/" class="menu-link">Головна</a>
-				<a href="/catalog" class="menu-link">Каталог</a>
+				<a href="#" class="menu-link">Каталог</a>
 				<ul class="catalog">
-					{% for category in categories%}
-					<li><a href="">{{ category.name }}</a>
-					</li>
+					{% for category in categories %}
+					<li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
 					{% endfor %}
 				</ul>				
-				<a href="/" class="menu-link">Уподобання</a>
+				<a href="#" class="menu-link">Уподобання</a>
 				<a href="#" class="menu-link">Порівняння</a>
 			
 			</nav>
@@ -45,9 +49,8 @@
 				<a href="#" class="search-btn"><i class="fas fa-search"></i></a>
 			</div>
 			<div class="cart_and_user">
-				<a href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i><span id="cart_count">{{ cart.items.count }}</span></a>
-
-				<a href=""><img src="{% static 'icon/user_back.png' %}" class="user flexible-image"></a>
+				<a href="{% url 'cart' %}"><i class="fas fa-shopping-cart"></i><span class="badge" id="cart_count">{{ cart.items.count }}</span></a>
+				<a href='{% url "login" %}'><img src="{% static 'icon/user_back.png' %}" class="user flexible-image"></a>
 			</div>
 		</div>
 	</header>
@@ -64,9 +67,9 @@
 					<h2>КОМПАНІЯ</h2>
 					<hr>
 					<li>
-						<ul><a href="#about_us">Про нас</a></ul>
-						<ul><a href="#contacts">Контакти</a></ul>
-						<ul><a href="shares/">Акції</a></ul>
+						<ul><a href="../../../../../#about_us">Про нас</a></ul>
+						<ul><a href="../../../../../#contacts">Контакти</a></ul>
+						<ul><a href="../../../../../gift/">Подарунковий сертифікат</a></ul>
 					</li>
 					<p>Copyright © 2019— GALAXY.shop.ua</p>
 				</div>
@@ -74,9 +77,9 @@
 					<h2>ІНФОРМАЦІЯ ПРО ЗАМОВЛЕННЯ</h2>
 					<hr>
 					<li>
-						<ul><a href="delivery/">Умови доставки</a></ul>
-						<ul><a href="exchange/">Повернення / обмін</a></ul>
-						<ul><a href="payment/">Оплата</a></ul>
+						<ul><a href="../../../../../delivery/">Умови доставки</a></ul>
+						<ul><a href="../../../../../exchange/">Повернення / обмін</a></ul>
+						<ul><a href="../../../../../payment/">Оплата</a></ul>
 					</li>
 				</div>
 			</div>

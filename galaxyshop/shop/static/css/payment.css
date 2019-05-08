@@ -1,0 +1,36 @@
+
+
+.payment-title {
+	text-align: center;
+	margin-bottom: 25px;
+	font-weight: 800;
+	font-size: 40px;
+}
+.zak{
+	text-align: left;
+	font-size: 20px;
+}
+.payment li{
+	margin-top: 20px;
+}
+.payment, 
+.design{
+	margin-top: 60px;
+	margin-right: 45px;
+	margin-left: 45px;
+}
+
+
+label {
+ margin-top: 20px;
+
+}
+button{
+	color: white;
+	background-color: #0494d9;
+	border-radius: 10px;
+	size: 50px;
+}
+.design {
+	margin-bottom: 50px;
+}

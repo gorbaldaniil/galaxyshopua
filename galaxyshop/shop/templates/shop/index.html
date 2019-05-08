@@ -11,38 +11,6 @@
 <body>
 	
 	<button id="scrollToTopButton" onclick="scrollToTop(300,3);"><i class="fa fa-arrow-up"></i></button>
-	<div onclick="show('none')" id="gray"></div>
-	<div id="window">
-    <!-- Картинка крестика -->
-    <img class="close" src="i/close.png" alt=""  onclick="show('none')">
-    	<div class="form">
-        	<div class="exit">
-            	<h2>Вхід</h2>
-            	<p>Вже наш клієнт?</p>
-            	<hr>
-            	<div>
-                	<form method="post">
-                	{% csrf_token %}
-                	{{ form.as_p }}
-                	<button type="submit">Login</button>
-                	</form>
-            	</div>
-        	</div>
-        <div class="registration">
-            <h2>Новий аккаунт</h2>
-            <p>Ще не зареєстровані?</p>
-            <div>
-                <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Sign up</button>
-                </form>
-            </div>
-        </div>
-
-    	</div>
-	</div>
-
 
 	<header>
 		<div class="header_upper">
@@ -52,9 +20,9 @@
 				<p class="free">Безкоштовна доставка при замовленні від 699 грн</p>
 			</div>
 			<div class="header_right">
-				<a href="#"><img src="{% static 'icon/moon_white.png' %}"></a>
+				<a href="/nightmode"><img src="{% static 'icon/moon_white.png' %}"></a>
 				<p><a href="#">ua</a></p>
-				<img onclick="show('block')" src="{% static 'icon/user_white.png' %}">
+				<a href='{% url "login" %}'><img src="{% static 'icon/user_white.png' %}"></a>
 			</div>
 		</div>
 		<div class="name">
@@ -77,20 +45,26 @@
 			<h1>Каталог</h1>
 		</div>
 		<div class="category_catalog">
+			{% for category in categories %}
 			<ul>
-				<li><a href="#">Електроніка</a></li>
-				<li><a href="#">Побутова техніка</a></li>
-				<li><a href="#">Одяг і взуття</a></li>
-				<li class="by"><a href="#">Б/у</a></li>
+				<li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+					<ul>
+						{% for sub in category.subcategory.all %}
+						<a href="{{ sub.get_absolute_url }}"><li>{{ sub.name }}</li></a>
+						<br>
+						{% endfor %}
+					</ul>
+				</li>
 			</ul>
+			{% endfor %}
 			<a href="#" ><img src="{% static 'icon/magnifying-glass.png' %}"></a>
 		</div>
 	</div>
 
 	<div id="slider">
-		<img src="{% static 'icon/redmi_slider.jpg' %}">
-		<img src="{% static 'icon/iphone_slider.jpg' %}">
-		<img src="{% static 'icon/samsung_slider.jpg' %}">
+		<a href=""><img src="{% static 'icon/xiaomi_slider.jpg' %}"></a>
+		<a href=""><img src="{% static 'icon/iphone_slider.jpg' %}"></a>
+		<a href=""><img src="{% static 'icon/samsung_slider.jpg' %}"></a>
 	</div>
 
 	<div class="hits">
@@ -98,20 +72,51 @@
 			<img src="{% static 'icon/title_hits.png' %}">
 		</div>
 		<div class="hits_product_list">
-			{% for product in products %}
+				
+			{% for hit in hits %}
 			<div class="product"> 
 				<div class="product-image">
-					<a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}"></a>
+					<a href="{{ hit.product_list.get_absolute_url }}"><img src="{{ hit.product_list.image.url }}"></a>
 				</div>
-				<a href="{{ product.get_absolute_url }}"><h2>{{ product.title }}</h2></a>
+				<a href="{{ hit.product_list.get_absolute_url }}"><h2>{{ hit.product_list.title }}</h2></a>
 				<div class="hits_product_stars">
 					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
 				</div>
-				<p class="price_title">{{ product.price }}грн.</p>
+				<p class="price_title">{{ hit.product_list.price }}грн.</p>
 				<div class="icons_product">
 					<div class="cart">
-						<a href="#"><img src="{% static 'icon/cart_green.png' %}"></a>
-						<a href="#"><p>В КОРЗИНУ</p></a>
+							<a href="#" class="add_to_cart" data-slug='{{ hit.product_list.slug }}'><i class="fas fa-shopping-cart"></i></a>
+							<a href="" class="add_to_cart" data-slug='{{ hit.product_list.slug }}'>В КОРЗИНУ</a>
+					</div>
+					<div class="right_icons_product">
+						<img src="{% static 'icon/bar-chart.png' %}">
+						<img src="{% static 'icon/like.png' %}">
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="recomendation">
+		<div class="title_recomendation">
+			<h1>РЕКОМЕНДАЦІЇ</h1>
+		</div>
+		<div class="hits_product_list">
+			{% for recomend in recomendations %}
+			<div class="product"> 
+				<div class="product-image">
+					<a href="{{ recomend.product_list.get_absolute_url }}"><img src="{{ recomend.product_list.image.url }}"></a>
+				</div>
+				<a href="{{ recomend.product_list.get_absolute_url }}"><h2>{{ recomend.product_list.title }}</h2></a>
+				<div class="hits_product_stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+				</div>
+				<p class="price_title">{{ recomend.product_list.price }}грн.</p>
+				<div class="icons_product">
+					<div class="cart">
+							<a href="#" class="add_to_cart" data-slug='{{ recomend.product_list.slug }}'><i class="fas fa-shopping-cart"></i></a>
+							<a href="" class="add_to_cart" data-slug='{{ recomend.product_list.slug }}'>В КОРЗИНУ</a>
 					</div>
 					<div class="right_icons_product">
 						<img src="{% static 'icon/bar-chart.png' %}">
@@ -121,87 +126,6 @@
 			</div>
 			{% endfor %}
 
-
-		</div>
-	</div>
-
-	<div class="recomendation">
-		<div class="title_recomendation">
-			<h1>РЕКОМЕНДАЦІЇ</h1>
-		</div>
-		<div class="hits_product_list">
-			<div class="product"> 
-				<img src="{% static 'icon/product_icon.png' %}">
-				<h2>Apple iPhone 8 (PRODUCT)RED™ Special Edition 64GB</h2>
-				<div class="hits_product_stars">
-					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-				</div>
-				<p class="price_title"><b>17 777 грн.</b> <s>19 999 грн.</s></p>
-				<div class="icons_product">
-					<div class="cart">
-						<img src="{% static 'icon/cart_green.png' %}">
-						<p>В КОРЗИНУ</p>
-					</div>
-					<div class="right_icons_product">
-						<img src="{% static 'icon/bar-chart.png' %}">
-						<img src="{% static 'icon/like.png' %}">
-					</div>
-				</div>
-			</div>
-			<div class="product"> 
-				<img src="{% static 'icon/product_icon.png' %}">
-				<h2>Apple iPhone 8 (PRODUCT)RED™ Special Edition 64GB</h2>
-				<div class="hits_product_stars">
-					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-				</div>
-				<p class="price_title"><b>17 777 грн.</b> <s>19 999 грн.</s></p>
-				<div class="icons_product">
-					<div class="cart">
-						<img src="{% static 'icon/cart_green.png' %}">
-						<p>В КОРЗИНУ</p>
-					</div>
-					<div class="right_icons_product">
-						<img src="{% static 'icon/bar-chart.png' %}">
-						<img src="{% static 'icon/like.png' %}">
-					</div>
-				</div>
-			</div>
-			<div class="product"> 
-				<img src="{% static 'icon/product_icon.png' %}">
-				<h2>Apple iPhone 8 (PRODUCT)RED™ Special Edition 64GB</h2>
-				<div class="hits_product_stars">
-					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-				</div>
-				<p class="price_title"><b>17 777 грн.</b> <s>19 999 грн.</s></p>
-				<div class="icons_product">
-					<div class="cart">
-						<img src="{% static 'icon/cart_green.png' %}">
-						<p>В КОРЗИНУ</p>
-					</div>
-					<div class="right_icons_product">
-						<img src="{% static 'icon/bar-chart.png' %}">
-						<img src="{% static 'icon/like.png' %}">
-					</div>
-				</div>
-			</div>
-			<div class="product"> 
-				<img src="{% static 'icon/product_icon.png' %}">
-				<h2>Apple iPhone 8 (PRODUCT)RED™ Special Edition 64GB</h2>
-				<div class="hits_product_stars">
-					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-				</div>
-				<p class="price_title"><b>17 777 грн.</b> <s>19 999 грн.</s></p>
-				<div class="icons_product">
-					<div class="cart">
-						<img src="{% static 'icon/cart_green.png' %}">
-						<p>В КОРЗИНУ</p>
-					</div>
-					<div class="right_icons_product">
-						<img src="{% static 'icon/bar-chart.png' %}">
-						<img src="{% static 'icon/like.png' %}">
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -243,13 +167,21 @@
 		</div>
 		<div class="user_reviews">
 			<div class="user_response">
-				<img src="{% static 'icon/photo_user.jpg' %}">
-				<h3>АНДРІЙ</h3>
+				<img src="{% static 'icon/user_photo2.png' %}">
+				<h3>Максим</h3>
 				<div class="stars">
 					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 				</div>	
-				<p>Дуже красивий та зручний сайт. 
-						Рекомендую його!</p>
+				<p>Ціни не вище ніж в інших магазинах, періодично надають знижки на товари. Задоволені обслуговуванням персоналу!</p>
+			</div>
+
+			<div class="user_response">
+				<img src="{% static 'icon/user_photo3.png' %}">
+				<h3>Олег</h3>
+				<div class="stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+				</div>	
+				<p>Не один раз купую смартфон і різні аксесуари в Galaxy. Поки не було проблем. Ціни краще ніж в інших магазинах.</p>
 			</div>
 
 			<div class="user_response">
@@ -258,28 +190,16 @@
 				<div class="stars">
 					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 				</div>	
-				<p>Дуже красивий та зручний сайт. 
-						Рекомендую його!</p>
+				<p>Оформив на сайті кредит на айфон, прийшов в магазин в місті на інший день і забрали телефон і документи. Взагалі ніяких проблем! Рекомендую!</p>
 			</div>
 
 			<div class="user_response">
-				<img src="{% static 'icon/photo_user.jpg' %}">
-				<h3>АНДРІЙ</h3>
+				<img src="{% static 'icon/user_photo4.png' %}">
+				<h3>Олена</h3>
 				<div class="stars">
 					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-				</div>	
-				<p>Дуже красивий та зручний сайт. 
-						Рекомендую його!</p>
-			</div>
-
-			<div class="user_response">
-				<img src="{% static 'icon/photo_user.jpg' %}">
-				<h3>АНДРІЙ</h3>
-				<div class="stars">
-					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-				</div>	
-				<p>Дуже красивий та зручний сайт. 
-						Рекомендую його!</p>
+				</div>
+				<p>Купувала вчора зарядне у вашому магазині. Консультація була нада дуже якісно та профейсійно, віднеслись як до VIPперсони)</p>
 			</div>
 
 		</div>
@@ -311,17 +231,17 @@
 		<hr>
 		<div class="contacts_info">	
 			<div class="contacts_email">
-				<div class="img"><img src="{% static 'icon/email.png' %}"> </div>
+				<i class="far fa-envelope"></i>
 				<h2>Email:</h2>
 				<p>support@galaxy.shop</p>
 			</div>
 			<div class="contacts_telephone">
-				<img src="{% static 'icon/tel_icon.png' %}"> 
+				<i class="fas fa-mobile"></i>
 				<h2>Telephone:</h2>
 				<p>+380 98 328 8530 <br> + 380 67 892 8630</p>
 			</div>
 			<div class="contacts_location">
-				<div class="img"><img src="{% static 'icon/adress.png' %}"></div>
+				<i class="fas fa-map-marked-alt"></i>
 				<h2>Location:</h2>
 				<p>м. Львів, <br> вул. Наукова 96</p>
 			</div>
@@ -359,7 +279,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="map"><iframe width="100%" height="500" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23804.673832914992!2d23.98907874318344!3d49.79590086258315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xca1468834bb1dd06!2sSpecialized+secondary+school+%E2%84%9666!5e0!3m2!1sru!2sua!4v1555535977643!5m2!1sru!2sua" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+		<div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2163.940074828145!2d24.013160934594698!3d49.83544984476133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9869cc7025bc8e3f!2z0J3QsNGG0LjQvtC90LDQu9GM0L3Ri9C5INGD0L3QuNCy0LXRgNGB0LjRgtC10YIgwqvQm9GM0LLQvtCy0YHQutCw0Y8g0L_QvtC70LjRgtC10YXQvdC40LrQsMK7!5e0!3m2!1sru!2sua!4v1557264740504!5m2!1sru!2sua" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe></div>
 		<div class="footer">
 			<div class="company">
 				<h2>КОМПАНІЯ</h2>
@@ -367,7 +287,7 @@
 				<li>
 					<ul><a href="#about_us">Про нас</a></ul>
 					<ul><a href="#contacts">Контакти</a></ul>
-					<ul><a href="shares/">Акції</a></ul>
+					<ul><a href="gift/">Подарунковий сертифікат</a></ul>
 				</li>
 
 				<p>Copyright © 2019— GALAXY.shop.ua</p>
@@ -391,10 +311,26 @@
 
 	
 
-	<script
-  src="https://code.jquery.com/jquery-3.4.0.js"
-  integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
-  crossorigin="anonymous"></script>	
+	<script src="{% static 'JavaScript/jquery.js'%}"></script>	
+<script>
+$(document).ready(function(){
+	$('.add_to_cart').on('click', function(e){
+		e.preventDefault()
+		product_slug = $(this).attr('data-slug')
+		data = {
+			product_slug: product_slug
+		}
+		$.ajax({
+			type: "GET",
+			url: '{% url "add_to_cart" %}',
+			data: data,
+			success: function(data){
+				$("#cart_count").html(data.cart_total)
+			}
+		})
+	})
+})
+</script>
 	<script type="text/javascript" src="{% static 'JavaScript/script.js' %}"></script>
 </body>
 </html>

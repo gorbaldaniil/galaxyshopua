@@ -1,31 +1,7 @@
+{% extends 'shop/base.html' %}
 {% load static %}
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="{% static 'css/delivery.css' %}">
-	<link href="https://fonts.googleapis.com/css?family=Exo+2:200,300,400,500,600,700,800,900" rel="stylesheet">
-	<title></title>
-</head>
-<body>
-	<header>
-		<div class="menu_icon">
-			<figure>
-				<img src="{% static 'icon/menu_white.png' %}" class="menu">
-			</figure>
-		</div>
-		<div class="name">
-			<h1>GALAXY</h1>
-		</div>
-		<div class="icon_menu">
-			<a href="#"><img src="{% static 'icon/like_white.png' %}"></a>
-			<a href="#"><img src="{% static 'icon/bar-chart_white.png' %}"></a>
-			<a href="#"><img src="{% static 'icon/cart_white.png' %}"></a>
-			<a href="#"><img src="{% static 'icon/user_back.png' %}" class="user"></a>
-		</div>
-	</header>
-
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/delivery.css' %}">
 	<h1 class="terms">Умови доставки</h1>
 
 	<div class="delivery_methods">
@@ -62,12 +38,6 @@
 		</div>
 	</div>
 
-	<div class="ways_of_payment">
-		<h2>Способи оплати:</h2>
-		<div class="all_ways_payment">
-			
-		</div>
-	</div>
-
 </body>
 </html>
+{% endblock content %}

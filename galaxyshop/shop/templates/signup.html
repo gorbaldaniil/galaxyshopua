@@ -1,6 +1,17 @@
-<h2>Sign up</h2>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<div class="header">
+	<a href="/"><i class="fas fa-arrow-circle-left"></i></a>
+	<p class="singup"><a href="{% url 'login' %}">Увійти</a></p>
+</div>
+
+<h2 class="singup-title">Sign up</h2>
+<div class="singup-info">
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Sign up</button>
 </form>
+</div>
