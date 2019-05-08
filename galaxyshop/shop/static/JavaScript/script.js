@@ -1,3 +1,33 @@
+function menu(selector) {
+	let menu = $(selector);
+	let button = menu.find('.menu-btn');
+	let links = menu.find('.menu-link');
+	let overlay = menu.find('.menu-overlay');
+
+
+	button.on('click', (e) => {
+		e.preventDefault();
+		toggleMenu();
+	});
+
+	links.on('click', () => toggleMenu());
+	overlay.on('click', () => toggleMenu());
+
+	function toggleMenu() {
+		menu.toggleClass('menu-active');
+
+		if (menu.hasClass('menu-active')) {
+			$('body').css('overflow', 'hidden');
+		} else {
+			$('body').css('overflow', 'visible');
+		}
+	}
+}
+menu('.menu');
+
+
+
+
 function slider(selector){
 	let slider = $(selector);
 	let imgs = slider.children();
@@ -122,3 +152,66 @@ function slider(selector){
 
 
 slider('#slider')
+
+
+
+
+// ScrollToTop
+
+var html, body, scrollToTopButton;
+window.onload = function() {
+  html = document.documentElement;
+  body = document.body;
+  scrollToTopButton = document.getElementById("scrollToTopButton");
+};
+
+function scrollToTop(totalTime, easingPower) {
+  //console.log("here");
+  var timeInterval = 1; //in ms
+  var scrollTop = Math.round(body.scrollTop || html.scrollTop);
+  //var by=- scrollTop;
+  var timeLeft = totalTime;
+  var scrollByPixel = setInterval(function() {
+    var percentSpent = (totalTime - timeLeft) / totalTime;
+    if (timeLeft >= 0) {
+      var newScrollTop = scrollTop * (1 - easeInOut(percentSpent, easingPower));
+      body.scrollTop = newScrollTop;
+      html.scrollTop = newScrollTop;
+      //console.log(easeInOut(percentSpent,easingPower));
+      timeLeft--;
+    } else {
+      clearInterval(scrollByPixel);
+      //Add hash to the url after scrolling
+      //window.location.hash = hash;
+    }
+  }, timeInterval);
+}
+
+function easeInOut(t, power) {
+  if (t < 0.5) {
+    return 0.5 * Math.pow(2 * t, power);
+  } else {
+    return 0.5 * (2 - Math.pow(2 * (1 - t), power));
+  }
+}
+
+window.onscroll = controlScrollToTopButton;
+
+function controlScrollToTopButton() {
+  var windowInnerHeight = 1.5 * window.innerHeight;
+  if (
+    body.scrollTop > windowInnerHeight ||
+    html.scrollTop > windowInnerHeight
+  ) {
+    scrollToTopButton.classList.add("show");
+  } else {
+    scrollToTopButton.classList.remove("show");
+  }
+}
+
+
+function show(state)
+	{
+	document.getElementById('window').style.display = state;	
+	document.getElementById('gray').style.display = state; 		
+	}	

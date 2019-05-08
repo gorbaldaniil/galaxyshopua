@@ -1,0 +1,43 @@
+.product_description {
+	width: 100%;
+}
+.product_description .product_title h1 {
+	font-weight: 500;
+}
+.product_description .product_title b {
+	font-weight: 250;
+}
+.product_description_info {
+	display: block;
+	width: 100%;
+	margin-right: 40px;
+	margin-left: 25px;
+}
+.product_description_all_main {
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
+.product_description_all {
+	display: flex;
+}
+.product_description_all_main h2 {
+	font-size: 24px;
+	font-weight: 500;
+	margin-top: 25px; 
+}
+.product_description_all p,
+.product_description_all pre{
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 2;
+}
+.description_type {
+	margin-bottom: 5px;
+}
+
+.description_type {
+	width: 55%;
+}
+.description_type_info {
+	width: 40%;
+}

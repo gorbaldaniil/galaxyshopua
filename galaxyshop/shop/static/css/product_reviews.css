@@ -1,0 +1,11 @@
+.reviews_info {
+	width: 100%;
+}
+.reviews_info h1 {
+	font-weight: 800;
+	font-size: 80px;
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 200px;
+	opacity: 0.4;
+}

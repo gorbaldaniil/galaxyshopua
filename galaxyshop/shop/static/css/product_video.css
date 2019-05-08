@@ -1,0 +1,43 @@
+.product_video {
+	width: 100%;
+}
+
+.product_video_info {
+	display: block;
+	width: 100%;
+	margin-right: 40px;
+	margin-left: 25px;
+}
+.product_video_info iframe {
+	margin-top: 50px;
+}
+.product_video .buttons,
+.product_description .buttons,
+.product_all_photo .buttons
+{
+	justify-content: space-around;
+}
+.product_video .cart_and_installment,
+.product_description .cart_and_installment,
+.product_all_photo .cart_and_installment{
+	width: 100%;
+	justify-content: space-around;
+	margin-bottom: 50px;
+	
+}
+.product_video .installment_in_month,
+.product_description .installment_in_month,
+.product_all_photo .installment_in_month{
+	margin: 0;
+}
+.product_video .cart,
+.product_description .cart,
+.product_all_photo .cart{
+	margin: 0;
+}
+.product_video_info  .product_title h1 {
+	font-weight: 500;
+}
+.product_video_info .product_title b {
+	font-weight: 250;
+}

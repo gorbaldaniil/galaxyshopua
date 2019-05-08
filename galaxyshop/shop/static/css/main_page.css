@@ -8,6 +8,33 @@ a {
 	color: white;
 }
 
+
+#scrollToTopButton i {
+	color: white;
+}
+#scrollToTopButton {
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	height: 50px;
+	width: 50px;
+	font-size: xx-large;
+	border: 0;
+	outline: 0;
+	background-color: #0494d9;
+	cursor: pointer;
+	box-shadow: 2px 4px 16px rgba(0,0,0,0.3);
+	opacity: 0;
+	transform: scale(0);
+	visibility: hidden;
+	transition: .2s;
+}
+#scrollToTopButton.show{
+	opacity: 1;
+	transform: scale(1);
+	visibility: visible;
+}
+
 /* Header */
 
 header {
@@ -89,7 +116,8 @@ header {
 	height: 23px;
 	width: 23px;
 }
-.header_right a {
+
+.header_right a{
 	margin-left: 10px;
 }
 
@@ -110,7 +138,7 @@ header {
 
 .catalog {
 	width: 100%;
-	height: 188px;
+	height: 250px;
 	background: #0494d9;
 	color: white;
 }
@@ -148,14 +176,124 @@ header {
 .by {
 	font-weight: 800;
 }
-
+.category_catalog li ul {
+	display: none;
+	position: absolute;
+	min-width: 150px;
+	list-style-type: disc;
+}
+.category_catalog li:hover > ul {
+	display: block;
+	max-width: 250px;
+}
 /* End of catalog */
+
+/* Hits */
+.hits {
+	height: 794px;
+	width: 100%;
+	display: block;
+	background: #eeeeee;
+}
+.title_hits {
+	padding-top: 90px;
+	padding-bottom: 60px;	
+	width: 100%;
+}
+.title_hits img {
+	display: flex;
+	margin: 0 auto;
+}
+
+.hits_product_list {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;	
+}
+.product-image {
+	width: 300px;
+}
+.product-image img {
+	display: flex;
+	margin: 0 auto;
+}
+.product {
+	display: block;
+	width: 300px;
+	justify-content: space-between;
+	margin: 25px;
+}
+.product h2 {
+	font-weight: 300;
+	font-size: 18px;
+}
+.product .fa-star {
+	color: #ed8a19;
+}
+.product p {
+	font-size: 18px;
+}
+.product b {
+	color: #ff2020;
+	font-weight: 500;
+}
+.icons_product,
+.cart {
+	display: flex;
+}
+.icons_product img {
+	height: 20px;
+	width: 20px;
+}
+
+.right_icons_product {
+	display: inline;	
+	margin-left: auto;
+}
+.price_title,
+.cart,
+.right_icons_product {
+	padding-top: 4px;
+}
+
+.product a {
+	color: black;
+}
+.product a:hover {
+	color: #0494d9;
+}
+.cart a{
+	font-weight: 500;
+	font-size: 14px;
+	color: #00b853;
+}
+/* End of hits */
+
+/* Recomendation */
+
+.recomendation {
+	height: 794px;
+	width: 100%;
+	display: block;
+}
+.title_recomendation {
+	width: 100%;
+	padding-top: 90px;
+	padding-bottom: 90px;	
+}
+.title_recomendation h1 {
+	text-align: center;
+	font-weight: 900;
+	font-size: 65px;
+}
+/* End of recomendation */
 
 /* About Us */
 .about_us {
 	width: 100%;
 	height: 530px;
 	background: #eeeeee;
+	padding-bottom: 60px;
 }
 .title_about_us {
 	text-align: center;
@@ -191,7 +329,7 @@ header {
 .price,
 .quality,
 .charity{
-	width: 500px;
+	width: 550px;
 	height: 150px;
 }
 .info_about_us h3 {
@@ -203,17 +341,150 @@ header {
 	margin-left: 10px;
 }
 	
+/* End of About Us */
+
+/* Rewiews */
+
+.reviews {
+	display: block;
+	width: 100%;
+	height: 1030px;
+
+}
+.title_reviews {
+	text-align: center;
+}
+
+.title_reviews hr {
+   	border: 0.8px solid black;
+    width: 53px;
+	margin: 0 auto;	
+    
+}
+.title_reviews h1 {
+	font-weight: 900;
+	font-size: 60px;
+	margin-bottom: 20px;
+	margin-top: 96px;
+	color: #262b2e;
+}
+
+.user_reviews {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.user_response {
+	display: block;
+	width: 22%;
+	margin: 40px;
+	text-align: center;
+}
+.user_response img {
+	height: 230px;
+	width: 230px;
+	border-radius: 50%;
+}
+.user_response h3 {
+	font-weight: 300;
+	font-size: 25px;
+}
+.user_response p {
+	font-weight: 300;
+	font-size: 17px;
+}
+.stars .fa-star {
+	color: #ed8a19;
+}
+.info_about_user .fa-star {
+	font-size: 20px;
+	margin-top: 5px
+}
+.rate_us {
+	width: 100%;
+	display: flex;
+	margin-top: 70px;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+.info_about_user {
+	width: 25%;
+	margin-top: 45px;
+}
+.rate_us_textarea, 
+.info_about_user {
+	text-align: center;
+}
+
+.rate_us_textarea h2 {
+	color: #262b2e;
+	font-size: 45px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+.info_about_user h3 {
+	font-weight: 300;
+	font-size: 40px;
+}
+
+.rate_us_textarea textarea {
+  display: block;
+  width: 90%;
+  padding: 15px 30px;
+  margin-bottom: 10px;
+  background: #eeeeee;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 50px;
+  
+}
+
+.info_about_user input {
+  display: block;
+  width: 90%;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  background: #eeeeee;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 50px;
+
+}
+.info_about_user input[type="submit"] {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  background: #eeeeee;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+.info_about_user input[type="submit"] {
+  margin-top: 10px;
+  background: #0494d9;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+.rate_us_textarea textarea {resize: none;}
+
+
+/* End of rewiews */
 
 /* Contacts */
 .contacts {
 	width: 100%;
-	height: 527px;
+	height: 530px;
 	background: #eeeeee;
 }
 .contacts hr {
 	width: 50px;
 	border: 0.5px solid black;
-	margin: 0 auto 65px;
+	margin: 0 auto 100px;
 }
 .contacts_title {
 	font-size: 65px;
@@ -225,43 +496,29 @@ header {
 }
 .contacts_info {
 	width: 100%;
-	display: inline-flex;
-	justify-content: space-between;
+	display: flex;
+	justify-content: space-around;
 	text-align: center;
 }
 .contacts_info h2 {
-	font-size: 50px;
+	font-size: 45px;
 	font-weight: 400;
 }
 .contacts_info p {
-	font-size: 25px;
+	font-size: 22px;
 	font-weight: 300;
 }
-.contacts_email img {
-	margin-top: 30px;
-	height: 100px;
-	width: 150px;
+.contacts_info i {
+	font-size: 120px;
 }
-.contacts_telephone img {
-	height: 150px;
-	width: 115px;
-}
-.contacts_location img {
-	margin-top: 10px;
-	height: 130px;
-	width: 135px;
-}
-.contacts_location .img {
-	height: 150px;
-}
-.contacts_email .img {
-	height: 150px;
-}
-.contacts_email,
+
+
+
+/*.contacts_email,
 .contacts_telephone,
 .contacts_location {
 	padding: 0 74px 0 74px;
-}
+}*/
 
 
 /* Footer */
@@ -363,17 +620,23 @@ footer hr {
 }
 
 
+
+
+
+
+
 /* Map */
 
 #map {
 	width: 100%;
 	height: 500px;
 }
+/* End of map*/
 
 /* Slider */
 .slider {
 	--color-1: #9e9e9e;
-	--color-2: #8c8c8c;
+	--color-2: #0494d9;
 	
 	position: relative;
 	overflow: hidden;
@@ -451,3 +714,6 @@ footer hr {
 	border-color: transparent;
 	background-color: var(--color-2)
 }
+/* End of slider*/
+
+

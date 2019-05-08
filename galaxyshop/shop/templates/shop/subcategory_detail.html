@@ -1,0 +1,39 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/subcategory.css' %}">
+
+<div class="subcategory">
+	<div class="subcategory-info">
+		<h2>Товари підкатегорії <b>{{ subcategory.name }}</b> :</h2>
+	</div>
+	<div class="product_list">
+		{% for p in product %}
+			<div class="product"> 
+				<div class="product-image">
+					<a href="{{ p.get_absolute_url }}"><img src="{{ p.image.url }}"></a>
+				</div>
+				<a href="{{ p.get_absolute_url }}"><h2>{{ p.title }}</h2></a>
+				<div class="hits_product_stars">
+					<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+				</div>
+				<p class="price_title">{{ p.price }}грн.</p>
+				<div class="icons_product">
+					<div class="cart">
+							<a href="" class="add_to_cart" data-slug='{{ p.slug }}'><i class="fas fa-shopping-cart"></i></a>
+							<a href="" class="add_to_cart" data-slug='{{ p.slug }}'>В КОРЗИНУ</a>
+					</div>
+					<div class="right_icons_product">
+						<img src="{% static 'icon/bar-chart.png' %}">
+						<img src="{% static 'icon/like.png' %}">
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+	</div>
+</div>
+
+
+
+
+{% endblock content %}

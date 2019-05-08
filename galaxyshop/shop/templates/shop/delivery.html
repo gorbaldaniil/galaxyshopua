@@ -1,0 +1,43 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/delivery.css' %}">
+	<h1 class="terms">Умови доставки</h1>
+
+	<div class="delivery_methods">
+		<h2>Способи доставки:</h2>
+		<div class="all_ways_delivery">
+			<div class="novaposhta">
+				<img src="{% static 'icon/novaposhta.png' %}">
+				<h3>«Нова пошта»</h3>
+				<p>Доставка в відділення «Нова пошта» <br> <br>
+				За допомогою доставки «Нова пошта», Ви можете отримати товар навіть у найвіддаленіших куточках України. При покупці товарів інших продавців послуга післяплати оплачується окремо від доставки.</p>
+			</div>
+			<div class="poshtomat">
+				<img src="{% static 'icon/poshtomat.png' %}">
+				<h3>З почтомата</h3>
+				<p>Самовивіз з почтоматов Ви можете отримати замовлення в брендованих почтоматах інтернет-супермаркету GALAXY. Почтомат - це термінал самообслуговування, який дозволить заощадити час при отриманні посилки вагою до 5 кг.</p>
+			</div>
+			<div class="ukrposhta">
+				<img src="{% static 'icon/ukrposhta.png' %}">
+				<h3>«Укрпошта»</h3>
+				<p>Доставка в більш, ніж 11 000 відділень в 29 000 населених пунктів України</p>
+			</div>
+			<div class="address_delivery">
+				<img src="{% static 'icon/delivery.png' %}">
+				<h3>Адресна доставка</h3>
+				<p>Доставка кур'єром за адресою <br> <br>
+				Доставка проводиться до входу в будівлю
+				Вартість доставки 50 грн</p>
+			</div>
+			<div class="meest_experess">
+				<img src="{% static 'icon/meest.png' %}">
+				<h3>Meest Express</h3>
+				<p>Доставка кур'єром додому Термін доставки: 3-5 днів</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+{% endblock content %}

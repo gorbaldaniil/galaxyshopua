@@ -1,0 +1,149 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+
+<div class="product_main_page">
+	<div class="collapse">
+		<ul>
+			<a href=""><li class="collapse_active">Все про товар</li></a>
+			<a href='description'><li>Характеристики</li></a>
+			<a href="video"><li>Огляд</li></a>
+			<a href="photos"><li>Фото</li></a>
+			<a href="reviews"><li>Відгуки</li></a>
+		</ul>
+		<hr>
+	</div>
+
+	<div class="product_photo_and_information">
+		<div class="product_photos">
+			<div class="product_main_photo">
+				<img id="goods-max" src="{{ product.image.url }}">
+			</div>
+			<div class="product_photos_slider">
+				{% for image in product.other_image.all %}
+				<img class="goods-min" src="{{ image.image_folder.url }}">
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="product_information">
+			<div class="product_title">
+				<h1>{{ product.title }}</h1>
+			</div>
+			<div class="product_main_information">
+				<div class="product_main_information_left">
+					<div class="stars_and_favorite">
+						<div class="product_stars">
+							<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+						</div>
+						<div class="favorite">
+							<a href=""><i class="far fa-heart"></i></a>
+							<a href=""><p>У список бажань</p></a>
+						</div>
+					</div>
+					<div class="product_price">
+						<p class="price_title">{{ product.price }}грн.</p>
+					</div>
+					<div class="buttons">
+						<div class="button-buy"><button>Купити</button></div>
+						<div class="installment"><button>Розстрочка</button></div>
+					</div>
+					<div class="cart_and_installment">
+						<div class="cart">
+							<a href="#" class="add_to_cart" data-slug='{{ product.slug }}'><i class="fas fa-shopping-cart"></i></a>
+							<a href="" class="add_to_cart" data-slug='{{ product.slug }}'>В КОРЗИНУ</a>
+						</div>
+						<div class="installment_in_month">
+							<p>1975 грн./міс</p>
+						</div>
+					</div>
+					<div class="description">
+						<pre>{{ product.description }} </pre>
+					</div>
+					<div class="product_color">
+						<div class="product_color_title"></div>
+						<div class="product_color_choice"></div>
+					</div>
+					<div class="internal_memory">
+						<div class="internal_memory_title"></div>
+						<div class="internal_memory_choice"></div>
+					</div>
+				</div>
+				<div class="product_main_information_right">
+					<div class="delivery_comparison_payment">
+						<div class="delivery_and_payment">
+							<div class="delivery">
+								<div class="delivery_title">
+									<h2>Способи доставки:</h2>
+								</div>
+								<div class="delivery_list">
+									<div class="nova_poshta">
+										<div class="nova_poshta_img">
+											<img src="{% static 'icon/novaposhta-small.png' %}">
+										</div>
+										<p>«Нова пошта»</p>
+									</div>
+									<div class="ukrposhta">
+										<div class="ukrposhta_img">
+											<img src="{% static 'icon/ukrposhta.png' %}">
+										</div>
+										<p>«Укрпошта»</p>
+									</div>
+									<div class="address">
+										<div class="address_img">
+											<img src="{% static 'icon/delivery.png' %}">
+										</div>
+										<p>Адресна доставка</p>
+									</div>
+								</div>
+							</div>
+							<div class="payment_and_exchange">
+								<div class="payment">
+									<h3>Оплата</h3>
+									<p>Готівкою, Безготівковими, VISA/Mastercard </p>
+								</div>
+								<div class="exchange">
+									<h3>Обмін/повернення </h3>
+									<p>Обмін і повернення товару здійснюється протягом 14 днів після покупки, відповідно до закону України"Про захист прав споживачів України" Гарантія: 12 місяців</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="enter_your_email">
+						<p>Введіть свою електронну пошту або телефон і ми вас повідомимо, коли товар стане дешевше</p>
+						<h2>Ел. пошта або телефон</h2>
+						<input type="email">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{% static 'JavaScript/jquery.js'%}"></script>	
+<script>
+$(document).ready(function(){
+	$('.add_to_cart').on('click', function(e){
+		e.preventDefault()
+		product_slug = $(this).attr('data-slug')
+		data = {
+			product_slug: product_slug
+		}
+		$.ajax({
+			type: "GET",
+			url: '{% url "add_to_cart" %}',
+			data: data,
+			success: function(data){
+				$("#cart_count").html(data.cart_total)
+			}
+		})
+	})
+})
+</script>
+<script type="text/javascript">
+	
+</script>
+
+{% endblock content %}
+

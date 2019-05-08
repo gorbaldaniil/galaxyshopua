@@ -1,0 +1,27 @@
+.product_all_photo {
+	width: 100%;
+}
+
+.product_all_photo_info {
+	display: block;
+	width: 100%;
+	margin-right: 40px;
+	margin-left: 25px;
+}
+
+.product_all_photo_info .product_main_information {
+	display: block;
+	width: 100%;
+}
+.product_all_photo_info .product_main_information img {
+	height: 720px;
+	width: 600px;
+	margin: 0 auto;
+	margin-left: 100px;
+}
+.product_all_photo .product_title h1 {
+	font-weight: 500;
+}
+.product_all_photo .product_title b {
+	font-weight: 250;
+}

@@ -1,0 +1,51 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+<div class="product_all_photo">
+	<div class="collapse">
+		<ul>
+			<a href="../"><li>Все про товар</li></a>
+			<a href="../description"><li>Характеристики</li></a>
+			<a href="../video"><li>Огляд</li></a>
+			<a href=""><li class="collapse_active">Фото</li></a>
+			<a href="../reviews"><li>Відгуки</li></a>
+		</ul>
+		<hr>
+	</div>
+	<div class="product_photo_and_information">
+		<div class="product_photos">
+			<div class="product_main_photo">
+				<img src="{{ product.image.url }}">
+			</div>
+			
+			<div class="buttons">
+						<div class="button-buy"><button>Купити</button></div>
+						<div class="installment"><button>Розстрочка</button></div>
+					</div>
+					<div class="cart_and_installment">
+						<div class="cart">
+							<a href="#" class="add_to_cart" data-slug='{{ product.slug }}'><i class="fas fa-shopping-cart"></i></a>
+							<a href="" class="add_to_cart" data-slug='{{ product.slug }}'>В КОРЗИНУ</a>
+						</div>
+						<div class="installment_in_month">
+							<p>1975 грн./міс</p>
+						</div>
+					</div>
+		</div>
+		<div class="product_all_photo_info">
+			<div class="product_title">
+				<h1>Фото <b>{{ product.title }}</b></h1>
+			</div>
+			<div class="product_main_information">
+				{% for image in product.other_image.all %}
+				<img src="{{ image.image_folder.url }}">
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,55 @@
+
+.all_ways_delivery {
+	display: flex;
+}
+
+.all_ways_delivery img {
+	height: 100px;
+	width: 100px;
+	margin-top: 10px;
+}
+.novaposhta img {
+	height: 100px;
+	width: 185px;
+} 
+.terms,
+.delivery_methods,
+.ways_of_payment {
+	margin: 0px 25px 0 25px;
+}
+.terms {
+	font-weight: 600;
+	margin-top: 25px;
+	font-size: 45px;
+}
+.all_ways_delivery {
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+}
+.all_ways_delivery h3 {
+	font-weight: 500;
+	font-size: 20px;
+}
+.all_ways_delivery p {
+	font-weight: 400;
+	font-size: 12px;
+	margin-top: 10px;
+	width: 220px;
+
+}
+.delivery_methods h2 {
+	font-size: 28px;
+	font-weight: 500;
+}
+.delivery_methods{ 
+	margin-bottom: 70px;
+}
+
+/* Способи оплати */
+
+.ways_of_payment h2 {
+	margin-top: 30px;
+	font-size: 28px;
+	font-weight: 500;
+}

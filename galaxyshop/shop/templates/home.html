@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<h1 class="home-title">Вхід в інтернет-магазин</h1>
+{% if user.is_authenticated %}
+<p class="logout"><a href="{% url 'logout' %}">Вийти</a></p>
+<div class="home-info">
+	<p>Привіт {{ user.username }}! </p>
+	<a href="/"><p>Вернутись на сайт</p></a>
+</div>
+{% else %}
+<div class="home-info">
+	<p><a href="{% url 'signup' %}">Зареєструватися</a></p>
+	<p><a href="{% url 'login' %}">Увійти</a></p>
+</div>
+{% endif %}

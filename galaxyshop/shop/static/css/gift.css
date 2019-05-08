@@ -1,0 +1,28 @@
+.certificate,
+.rules {
+	margin-left: 45px;
+	margin-right: 45px;
+	margin-top: 45px;
+}
+.certificate-title {
+	text-align: center;
+	margin-bottom: 50px;
+}
+.certificate h4 {
+	margin-top: 20px;
+	font-weight: 300;
+	font-size: 20px;
+}
+.rules {
+	margin-bottom: 50px;
+}
+.rules-title {
+	text-align: center;
+	font-size: 25px;
+	font-weight: 800;
+}
+.rules li {
+	margin-top: 20px;
+	font-weight: 300;
+	font-size: 20px;
+}
